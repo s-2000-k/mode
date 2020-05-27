@@ -19,7 +19,7 @@ import re
 import time
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
-import scipy.misc
+import imageio
 import matplotlib.pyplot as plt
 
 from monodepth_model import *
@@ -52,7 +52,7 @@ def test_simple(params):
     left  = tf.placeholder(tf.float32, [2, args.input_height, args.input_width, 3])
     model = MonodepthModel(params, "test", left, None)
 
-    input_image = scipy.misc.imread(args.image_path, mode="RGB")
+    input_image = imageio.imread(args.image_path, mode="RGB")
     original_height, original_width, num_channels = input_image.shape
     input_image = scipy.misc.imresize(input_image, [args.input_height, args.input_width], interp='lanczos')
     input_image = input_image.astype(np.float32) / 255
