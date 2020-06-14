@@ -46,3 +46,7 @@ model_city2kitti (`model_cityscapes` fine-tuned on **kitti**)
 model_city2eigen (`model_cityscapes` fine-tuned on **eigen**)
 model_kitti_stereo (Our stereo model trained on the **kitti** split for 12 epochs, make sure to use `--do_stereo` when using it)
 
+8) Запуск
+
+
+
